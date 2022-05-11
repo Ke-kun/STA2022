@@ -16,7 +16,7 @@ def is_prime():
         if int(n)%2 == 0:
             s = "偶数"
         else:
-            s = "素数"
+            s = "奇数"
     except:
         e = traceback.format_exc()
         return render_template("error.html", error=e)
