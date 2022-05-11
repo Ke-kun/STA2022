@@ -20,4 +20,4 @@ def is_prime():
     except:
         e = traceback.format_exc()
         return render_template("error.html", error=e)
-    return render_template("result.html", n=n, is_prime=s)
+    return render_template("result.html", n=n, s=s)
