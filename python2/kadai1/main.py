@@ -5,9 +5,11 @@ import traceback
 
 app = Flask(__name__)
 
+title = "課題1:偶奇判定"
+
 @app.route("/")
 def ask_num():
-    return render_template("index.html")
+    return render_template("index.html", title=title)
 
 @app.route("/result", methods=["GET"])
 def is_prime():
@@ -19,5 +21,5 @@ def is_prime():
             s = "奇数"
     except:
         e = traceback.format_exc()
-        return render_template("error.html", error=e)
-    return render_template("result.html", n=n, s=s)
+        return render_template("error.html", title=title, error=e)
+    return render_template("result.html", title=title, n=n, s=s)
